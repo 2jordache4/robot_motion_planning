@@ -213,7 +213,33 @@ def priority_test():
      - Remove all elements by repeated extractions.  enumerate After each
     step, display the content of  p_queue.
     """
-    pass  # Substitute with your code
+    my_queue = queue.PriorityQueue()
+
+    print('priority_test: Add "Oranges", "Apples", "Bananas"')
+    my_queue.insert("Oranges", 4.5)
+    my_queue.insert("Apples", 1)
+    my_queue.insert("Bananas", 2.7)
+    print(*my_queue.queue_list, sep=", ")
+
+    key, cost = my_queue.min_extract()
+    print(f"priority_test: Extracted ({key}, {cost})")
+
+    print('priority_test: Add "Cantaloupe"')
+    my_queue.insert("Cantaloupe", 3)
+    print(*my_queue.queue_list, sep=", ")
+
+    print("priority_test: Oranges is in queue? -->" +
+          f"{my_queue.is_member('Oranges')}")
+    print(f"priority_test: Milk is in queue? --> {my_queue.is_member('Milk')}")
+
+    while True:
+        (key, value) = my_queue.min_extract()
+        if (key is None and value is None):
+            break
+
+        print(f"priority_test: Removed ({key}, {value}) --> remaining: ",
+              end=" ")
+        print(*my_queue.queue_list, sep=", ")
 
 
 # edge_is_collision_test()
