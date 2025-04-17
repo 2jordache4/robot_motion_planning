@@ -62,8 +62,6 @@ class Polygon:
 
         ax.set_xlim(-1, 8)
         ax.set_ylim(-3, 6)
-        # plt.axis('off')
-        # plt.show()
 
     def is_filled(self):
         """
@@ -128,11 +126,7 @@ class Polygon:
 
         vertex = self.vertices[:, idx_vertex]
         coords_Conversion = [[0], [0]]
-        # total_points = np.hstack((test_points, self.vertices))
         flag_points = []
-        # print(vertex)
-
-        # self.plot('k')
 
         for i, coords in enumerate(test_points.T):
             bOcclude = True
@@ -168,7 +162,6 @@ class Polygon:
                 #          [vertex[1], coords_Conversion[1][0]], 'r-')
                 flag_points.append(False)
 
-        #SWITCH SHAPES IN HW.PY
 
         return flag_points
 
@@ -225,11 +218,7 @@ class Polygon:
         bCollision = False
         vertex = self.vertices[:, 0]
         coords_Conversion = [[0], [0]]
-        # total_points = np.hstack((test_points, self.vertices))
         flag_points = []
-        # print(vertex)
-
-        # self.plot('k')
 
         for i, coords in enumerate(test_points.T):
             bOcclude = True
@@ -264,8 +253,6 @@ class Polygon:
                 # plt.plot([vertex[0], coords_Conversion[0][0]],
                 #          [vertex[1], coords_Conversion[1][0]], 'r-')
                 flag_points.append(False)
-
-        #SWITCH SHAPES IN HW.PY
 
         return flag_points
 
@@ -378,22 +365,6 @@ def angle(vertex0, vertex1, vertex2, angle_type='unsigned'):
 
     return edge_angle
 
-
-# vertices = np.array([[0, 0, 5, 5], [0, 5, 5, 0]])
-# vertices2 = np.array([[0, 0], [0, 5]])
-# vertices3 = np.array([[0, 5], [5, 5]])
-
-# # print(vertices.T)
-# # square = np.array([[0, 1, 1, 0], [0, 0, 1, 1]])
-# myPoints = np.array([[10, 20, 30, 40], [10, 20, 30, 40]])
-# myPoly = Polygon(vertices)
-# myPoly.flip()
-# myPoly.plot('k')
-# plt.show()
-# # squarePoly = Polygon(square)
-# # print(squarePoly.is_visible(0, myPoints))
-# print(myPoly.is_visible(1,myPoints))
-# plt.show()
 
 
 
