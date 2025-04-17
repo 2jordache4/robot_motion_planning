@@ -39,20 +39,22 @@ class PriorityQueue:
         """
         Extract the element with minimum cost from the queue.
         """
-        if len(self.queue_list) != 0:
-            min_index = 0
-
-            for i, (cost, key) in enumerate(self.queue_list):
-                if cost < self.queue_list[min_index][0]:
-                    min_index = i
-
-            key, cost = self.queue_list.pop(min_index)
-
+        if len(self.queue_list) == 0:
+            cost_best = None
+            key_best = None
         else:
-            key = None
-            cost = None
+            idx_best = 0
+            cost_best = self.queue_list[0][1]
 
-        return key, cost
+            for idx in range(1, len(self.queue_list)):
+                cost = self.queue_list[idx][1]
+                if cost < cost_best:
+                    cost_best = cost
+                    idx_best = idx
+
+            key_best = self.queue_list[idx_best][0]
+            del self.queue_list[idx_best]
+        return key_best, cost_best
 
     def is_member(self, key):
         """
