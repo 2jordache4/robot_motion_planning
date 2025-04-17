@@ -664,30 +664,3 @@ def angle(vertex0, vertex1, vertex2, angle_type='unsigned'):
     return edge_angle
 
 
-# torus = Torus()
-# torus.phi_test()
-# torus.plot_curves()
-
-# plt.show()
-
-# xx_ticks=np.linspace(-11,11,51)
-# grid = Grid(xx_ticks,xx_ticks)
-# center = np.ones((2,1))
-
-# # point = np.array([[-7.5],[1.5]])
-# sphere = Sphere(center, -2,3)
-# def f_handle(point):
-#     return sphere.distance(point)
-# grid.plot_threshold(sphere.distance_grad,10)
-# sphere.plot('k')
-# sphere_world = pot.SphereWorld()
-# sphere_world.world[0]
-# rep=pot.RepulsiveSphere(sphere_world.world[0])
-# sphere_world.world[0].plot('r')
-# grid.plot_threshold(rep.grad)
-# plt.show()
-# print(sphere.distance_grad(point))
-# print(sphere.distance(point))
-
-# grid.plot_threshold()
-# idk how to call this tbh
