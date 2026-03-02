@@ -95,5 +95,10 @@ def torus_twolink_plot_jacobian():
         axes.set_aspect('equal', adjustable='box')
         plt.xlim([-10, 15])
         plt.ylim([-10, 15])
+    plt.show()
 
 # 
+
+if __name__ == '__main__':
+    twolink_plot_collision_test()
+    torus_twolink_plot_jacobian()

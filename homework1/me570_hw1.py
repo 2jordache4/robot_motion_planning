@@ -245,3 +245,11 @@ def priority_test():
         print(f"priority_test: Removed ({key}, {value}) --> remaining: ",
               end=" ")
         print(*my_queue.queue_list, sep=", ")
+
+
+if __name__ == "__main__":
+    edge_is_collision_test()
+    polygon_is_self_occluded_test()
+    polygon_is_visible_test()
+    polygon_is_collision_test()
+    
