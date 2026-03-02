@@ -19,7 +19,7 @@ def graph_search_test():
 
     graph = me570_graph.Graph(
         me570_graph.graph_test_data_load('graphVectorMedium'))
-    x_path = graph.search(0, 14, flag_debug_visualization=True)
+    x_path = graph.search(0, 14, flag_debug_visualization=False)
     plt.close('all')
     graph.plot(flag_labels=False,
                idx_closed=graph.idx_closed,
@@ -62,3 +62,9 @@ def twolink_search_test():
     plt.figure()
     my_robot = me570_robot.TwoLink()
     my_robot.animate(theta_path)
+
+
+if __name__ == '__main__':
+    graph_search_test()
+    sphere_world_graph_test()
+    twolink_search_test()

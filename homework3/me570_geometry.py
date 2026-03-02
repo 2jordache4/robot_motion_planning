@@ -503,7 +503,6 @@ def angle(vertex0, vertex1, vertex2, angle_type='unsigned'):
     return edge_angle
 
 
-<<<<<<< HEAD:homework3/me570_geometry.py
 class Sphere:
     """ Class for plotting and computing distances to spheres (circles, in 2-D). """
     def __init__(self, center, radius, distance_influence):
@@ -577,5 +576,3 @@ class Sphere:
         if self.radius < 0:
             grad_d_points_sphere *= -1
         return grad_d_points_sphere
-=======
->>>>>>> de800c49bae5a430ff84cc0bba3b230f65d61511:Homework/homework3(17)/me570_geometry.py

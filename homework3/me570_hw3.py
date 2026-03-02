@@ -15,7 +15,7 @@ def repulsive_sphere_grad_test():
     first two spheres in the sphere world, and overlap the plot of the sphere
     in each plot.
     """
-    plt.close('all')
+    # plt.close('all')
     xx_ticks = np.linspace(-11, 11, 51)
     grid = gm.Grid(xx_ticks, xx_ticks)
     world = pot.SphereWorld()
@@ -25,6 +25,7 @@ def repulsive_sphere_grad_test():
         plt.figure()
         sphere.plot('k')
         grid.plot_threshold(repulsive_sphere.grad, 1)
+    plt.show()
 
 
 def planner_run_plot_test():
@@ -59,6 +60,7 @@ def planner_run_plot_test():
                                   function=potential.eval,
                                   control=potential.grad)
             planner.run_plot()
+    plt.show()
 
 
 def clfcbf_run_plot_test():
@@ -66,7 +68,7 @@ def clfcbf_run_plot_test():
     Show the results of Planner.run_plot for one combination of
     repulsive_weight and  epsilon that makes the planner work reliably.
     """
-    plt.close('all')
+    # plt.close('all')
     plt.ion()
     world = pot.SphereWorld()
     nb_goals = world.x_goal.shape[1]
@@ -79,7 +81,7 @@ def clfcbf_run_plot_test():
     # We need to store the potential objects in a lambda,
     # hence it is necessary to wrap the entire body of the loop
     # in a separate function
-    for i_goal in range(nb_goals):
+    for i_goal in range(2):
         x_goal = world.x_goal[:, [i_goal]]
         pars['x_goal'] = x_goal
 
@@ -90,3 +92,9 @@ def clfcbf_run_plot_test():
                               function=clfcbf_control.function,
                               control=clfcbf_control.control)
         planner.run_plot()
+
+
+if __name__ == '__main__':
+    repulsive_sphere_grad_test()
+    planner_run_plot_test()
+    clfcbf_run_plot_test()

@@ -14,6 +14,7 @@ import me570_qp as qp
 
 class SphereWorld:
     """ Class for loading and plotting a 2-D sphereworld. """
+
     def __init__(self):
         """
         Load the sphere world from the provided file sphereworld.mat, and sets the
@@ -25,6 +26,7 @@ class SphereWorld:
         goal locations (one for each column).
         """
         data = scio.loadmat('sphereworld.mat')
+        #data = scio.loadmat('./robot_motion_planning/homework3/sphereworld.mat')
 
         self.world = []
         for sphere_args in np.reshape(data['world'], (-1, )):
@@ -185,6 +187,7 @@ class Total:
 
 class Planner:
     """ A class implementing a generic potential planner and plot the results """
+
     def __init__(self, function, control, epsilon, nb_steps):
         """Save the arguments to internal attributes """
         self.function = function
@@ -257,6 +260,7 @@ class Planner:
 
         # Make figure with good aspect ratio
         fig.set_size_inches([8, 2])
+        plt.show()
 
 
 class Clfcbf_Control:
